@@ -1,10 +1,11 @@
 import React from 'react';
 
-const UserItem = () => {
+const UserItem = props => {
   return (
-    <div>
-      <h1>User Item</h1>
-    </div>
+    <li>
+      <h3>{props.username}</h3>
+      <p>{props.placeCount}</p>
+    </li>
   );
 };
 
