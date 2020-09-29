@@ -2,18 +2,22 @@ import React from 'react';
 import UserItem from '../UserItem';
 
 const UsersList = props => {
+  if (!props.users.length) {
+    return <p>No actual users</p>;
+  }
+
   return (
-    <div>
-      {props.users.length ? (
-        <ul>
-          {props.users.map(user => (
-            <UserItem username={user.name} places={user.places} />
-          ))}
-        </ul>
-      ) : (
-        <p>No actual users :(</p>
-      )}
-    </div>
+    <ul>
+      {props.users.map(user => (
+        <UserItem
+          key={user.id}
+          image={user.image}
+          username={user.name}
+          id={user.id}
+          placeCount={user.places}
+        />
+      ))}
+    </ul>
   );
 };
 
