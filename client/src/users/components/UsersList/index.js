@@ -3,11 +3,15 @@ import UserItem from '../UserItem';
 
 const UsersList = props => {
   if (!props.users.length) {
-    return <p>No actual users</p>;
+    return (
+      <div className="center">
+        <h2>No actual users</h2>
+      </div>
+    );
   }
 
   return (
-    <ul>
+    <ul className="users-list">
       {props.users.map(user => (
         <UserItem
           key={user.id}
